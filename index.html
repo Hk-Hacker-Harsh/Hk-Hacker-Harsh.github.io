@@ -5,13 +5,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Harsh Khandal</title>
-    <link rel="stylesheet" href="index.css">
+    <script src="web/viewer.js"></script>
+    <link rel="stylesheet" href="web/viewer.css">
 </head>
 
 <body>
-    <script src="index.js"></script>
-    
-    <embed src="pdf.pdf" type="application/pdf" height="1080" width="100%"> </embed>
-</body>
-
+    <div>
+        <iframe id="pdf-js-viewer" src="web/viewer.html?file=../assets/pdf.pdf" title="webviewer" frameborder="0" width="100%" height="1000"></iframe>
+    </div>
 </html>
