@@ -1,3 +1,10 @@
 User-agent: *
 Allow: /
-Sitemap: https://hk-hacker-harsh.github.io/sitemap.xml
+
+# Exclude internal components
+Disallow: /assets/includes/
+Disallow: /css/
+Disallow: /js/
+
+# Point to your sitemap
+Sitemap: https://harshkhandal.me/sitemap.xml
