@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://hk-hacker-harsh.github.io/sitemap.xml

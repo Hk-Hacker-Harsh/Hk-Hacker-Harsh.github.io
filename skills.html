@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harsh Khandal | Skills</title>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/skills.css">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <main class="container">
+        <h1 class="page-title">/Technical_Arsenal</h1>
+
+        <!-- Category Card -->
+        <div class="category-grid">
+            <!-- Cyber -->
+            <div class="category-card" onclick="viewSkillCategory('cyber')">
+                <div class="card-icon">🛡️</div>
+                <h2>Cyber Security & Web Defense</h2>
+                <div class="progress-label"><span>Mastery</span> <span>70%</span></div>
+                <div class="progress-container">
+                    <div class="progress-bar" style="width: 60%;"></div>
+                </div>
+                <span class="btn">Expand_Details</span>
+            </div>
+
+            <!-- AI -->
+            <div class="category-card" onclick="viewSkillCategory('ai')">
+                <div class="card-icon">🤖</div>
+                <h2>Artificial Intelligence & Data Science</h2>
+                <div class="progress-label"><span>Mastery</span> <span>50%</span></div>
+                <div class="progress-container">
+                    <div class="progress-bar" style="width: 50%;"></div>
+                </div>
+                <span class="btn">Expand_Details</span>
+            </div>
+
+            <!-- Programming Languages -->
+            <div class="category-card" onclick="viewSkillCategory('lang')">
+                <div class="card-icon">👨‍💻</div>
+                <h2>Programming Languages</h2>
+                <div class="progress-label"><span>Mastery</span> <span>70%</span></div>
+                <div class="progress-container">
+                    <div class="progress-bar" style="width: 70%;"></div>
+                </div>
+                <span class="btn">Expand_Details</span>
+            </div>
+
+            <!-- Web Development -->
+            <div class="category-card" onclick="viewSkillCategory('web')">
+                <div class="card-icon">🌐</div>
+                <h2>Web Development</h2>
+                <div class="progress-label"><span>Mastery</span> <span>70%</span></div>
+                <div class="progress-container">
+                    <div class="progress-bar" style="width: 70%;"></div>
+                </div>
+                <span class="btn">Expand_Details</span>
+            </div>
+
+            <!-- Startups -->
+            <div class="category-card" onclick="viewSkillCategory('startups')">
+                <div class="card-icon">📈</div>
+                <h2>Startups</h2>
+                <div class="progress-label"><span>Mastery</span> <span>30%</span></div>
+                <div class="progress-container">
+                    <div class="progress-bar" style="width: 30%;"></div>
+                </div>
+                <span class="btn">Expand_Details</span>
+            </div>
+
+            <!-- Other : having approx 1 project and no expectation of new project -->
+            <div class="category-card" onclick="viewSkillCategory('others')">
+                <div class="card-icon">🗂️</div>
+                <h2>Others</h2>
+                <span class="btn">Expand_Details</span>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 Harsh Khandal. All Systems Operational <span class="footer-pulse"></span></p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        function viewSkillCategory(cat) {
+            window.location.href = `skill-details.html?type=${cat}`;
+        }
+    </script>
+</body>
+</html>

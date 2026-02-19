@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill Details</title>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/skills.css">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <main class="container">
+        <h1 id="detail-title" class="page-title">/Loading_Data...</h1>
+        
+        <div id="sub-skills-container" class="skills-detailed-list">
+            </div>
+
+        <div class="actions">
+            <a href="skills.html" class="btn" style="color:white;">← Back</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 Harsh Khandal. All Systems Operational <span class="footer-pulse"></span></p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    
+    <script>
+        // To add New Skill, Change Code Below
+        const skillData = {
+            'cyber': {
+                title: '/Cyber_Security',
+                skills: [
+                    { name: 'Cyber Projects', level: '70%', tag: 'cyber' },
+                    { name: 'Networking', level: '85%', tag: 'networking' },
+                    { name: 'VAPT', level: '70%', tag: 'vapt' },
+                    { name: 'CTF Strategy', level: '75%', tag: 'ctf' }
+                ]
+            },
+            'ai': {
+                title: '/AI_&_Automation',
+                skills: [
+                    { name: 'n8n Automation', level: '60%', tag: 'n8n' },
+                    { name: 'Ollama / LLMs', level: '40%', tag: 'ai' },
+                    { name: 'Workflow Logic', level: '60%', tag: 'automation' }
+                ]
+            },
+            'lang': {
+                title: '/Programming_Lang',
+                skills: [
+                    { name: 'Python', level: '80%', tag: 'python' },
+                    { name: 'Bash & Linux', level: '60%', tag: 'bash' },
+                    { name: 'HTML', level: '70%', tag: 'html' },
+                    { name: 'CSS', level: '60%', tag: 'css' },
+                    { name: 'JS', level: '50%', tag: 'js' },
+                    { name: 'PHP', level: '50%', tag: 'php' },
+                    { name: 'SQL', level: '60%', tag: 'sql' }
+                ]
+            },
+            'web': {
+                title: '/Web_Development',
+                skills: [
+                    { name: 'Wordpress', level: '80%', tag: 'wordpress' },
+                    { name: 'Backend Servers and API', level: '75%', tag: 'server' },
+                    { name: 'HTML', level: '70%', tag: 'html' },
+                    { name: 'CSS', level: '60%', tag: 'css' },
+                    { name: 'JS', level: '50%', tag: 'js' },
+                    { name: 'PHP', level: '50%', tag: 'php' },
+                    { name: 'SQL', level: '60%', tag: 'sql' },
+                    { name: 'Bootstrap', level: '60%', tag: 'bootstrap' }
+                ]
+            },
+            'startups': {
+                title: '/Startups',
+                skills: [
+                    { name: 'Startups', level: '', tag: 'startup' },
+                ]
+            },
+            'others': {
+                title: '/Others',
+                skills: [
+                    { name: 'CAD', level: '60%', tag: 'cad' },
+                    { name: 'Godot', level: '40%', tag: 'godot' }
+                ]
+            }
+        };
+
+        // No Changes Needed Below
+        window.onload = () => {
+            const params = new URLSearchParams(window.location.search);
+            const type = params.get('type');
+            const data = skillData[type];
+
+            if (data) {
+                document.getElementById('detail-title').innerText = data.title;
+                const container = document.getElementById('sub-skills-container');
+                
+                data.skills.forEach(s => {
+                    container.innerHTML += `
+                        <div class="skill-detail-item" onclick="window.location.href='projects.html?filter=${s.tag}'">
+                            <div class="skill-info">
+                                <span>${s.name}</span>
+                                <span class="percent">${s.level}</span>
+                            </div>
+                            <div class="progress-container">
+                                <div class="progress-bar" style="width: ${s.level}"></div>
+                            </div>
+                            <p class="click-hint">Click to see related projects_</p>
+                        </div>
+                    `;
+                });
+            }
+        };
+    </script>
+</body>
+</html>

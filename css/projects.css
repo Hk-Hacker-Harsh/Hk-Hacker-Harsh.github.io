@@ -1,0 +1,236 @@
+/* Container & Title */
+.container {
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 140px 20px 60px;
+}
+
+/* Grid Layout */
+.projects-grid {
+    display: grid;
+    /* 3 Columns for Desktop */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* Project Card */
+.project-card {
+    background: #0d1117;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 20px rgba(176, 38, 255, 0.2);
+    transform: translateY(-8px);
+}
+
+.project-img-wrapper {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    border-bottom: 1px solid #30363d;
+}
+
+.project-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.project-info h3 {
+    margin: 0 0 10px 0;
+    color: #ffffff;
+    font-size: 1.3rem;
+}
+
+.project-info p {
+    color: #8b949e;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+/* GitHub / Try Buttons */
+.project-links {
+    margin-top: auto;
+}
+
+.btn {
+    display: inline-block;
+    padding: 8px 18px;
+    background: transparent;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background: var(--primary-color);
+    color: #0b0c10;
+    box-shadow: 0 0 10px var(--primary-color);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 900px) {
+    .projects-grid {
+        /* 1 Column for Mobile */
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .container {
+        padding-top: 100px;
+    }
+
+    .project-card {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
+
+/* --- Modal Overlay --- */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(5, 5, 5, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: opacity 0.3s ease;
+}
+
+/* --- Modal Content Box --- */
+.modal-content {
+    background: #0d1117;
+    margin: 50px auto;
+    padding: 30px;
+    border: 1px solid var(--secondary-color);
+    width: 85%;
+    max-width: 850px;
+    border-radius: 20px;
+    position: relative;
+    box-shadow: 0 0 40px rgba(176, 38, 255, 0.25);
+    max-height: 85vh; /* Prevents modal from being taller than screen */
+    overflow-y: auto; /* Allows scrolling inside the modal if text is long */
+}
+
+/* --- Thumb-Friendly Close Button --- */
+.close-modal {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    color: var(--text-color);
+    font-size: 40px; /* Larger for mobile */
+    cursor: pointer;
+    line-height: 1;
+    z-index: 2010;
+}
+
+.close-modal:hover { color: var(--primary-color); }
+
+.modal-body {
+    display: flex;
+    flex-direction: row; /* Desktop default */
+    gap: 30px;
+    margin-top: 15px;
+}
+
+#modal-img {
+    width: 45%;
+    border-radius: 12px;
+    border: 1px solid #30363d;
+    object-fit: cover;
+}
+
+.modal-text {
+    width: 55%;
+    text-align: left;
+}
+
+.modal-text h2 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-top: 0;
+}
+
+.modal-text p {
+    color: #c5c6c7;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+/* --- Optimized Mobile Modal (< 850px) --- */
+@media (max-width: 850px) {
+    .modal-content {
+        /* FIXED: Reduced width and auto margin creates the gap on left/right */
+        width: 88%; 
+        margin: 20px auto;
+        
+        /* Padding and Border-radius */
+        padding: 45px 20px 25px; /* Extra top padding for the X button */
+        border-radius: 15px;
+        
+        /* Ensure padding doesn't push the box wider than the screen */
+        box-sizing: border-box; 
+        
+        /* Limit height for mobile viewports */
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+
+    .modal-body {
+        flex-direction: column; /* Stacks image on top of text */
+        gap: 20px;
+    }
+
+    #modal-img {
+        width: 100%;
+        max-height: 220px; /* Prevents image from pushing text off-screen */
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    .modal-text {
+        width: 100%;
+        text-align: center; /* Balanced look for mobile */
+    }
+
+    .modal-text h2 {
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+    }
+
+    .modal-text p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+        text-align: justify; /* Clean text edges */
+        margin-bottom: 20px;
+    }
+    
+    .modal-links .btn {
+        width: 100%; /* Easy-to-tap button for mobile users */
+        padding: 14px;
+        box-sizing: border-box;
+        display: block;
+    }
+}

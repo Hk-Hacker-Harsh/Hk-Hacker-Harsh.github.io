@@ -1,0 +1,379 @@
+/* Global Reset */
+body {
+    background-color: #0b0c10;
+    margin: 0;
+    padding: 0;
+    font-family: 'Share Tech Mono', monospace;
+    color: #c5c6c7;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    /* Desktop padding: enough space for floating header */
+    padding: 100px 20px 60px; 
+}
+
+/* Home Section Layout */
+.profile-section {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    margin-top: 20px;
+}
+
+/* Profile Image Styling */
+.profile-img-container {
+    flex-shrink: 0;
+}
+
+.profile-img {
+    width: 280px;
+    height: 280px;
+    border-radius: 15px;
+    border: 2px solid var(--secondary-color);
+    box-shadow: 0 0 15px rgba(176, 38, 255, 0.3);
+    object-fit: cover;
+    background-color: #15161a;
+    display: block;
+}
+
+/* GitHub-Style Detail Box */
+.detail-box {
+    flex-grow: 1;
+    background: #0d1117; 
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.detail-box h1 {
+    margin: 0 0 10px 0;
+    font-size: 2.2rem;
+    color: #ffffff;
+}
+
+.detail-box h2 {
+    font-size: 1.2rem;
+    color: #00f0ff; 
+    margin: 0 0 20px 0;
+}
+
+.info-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.info-list li {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+}
+
+.info-list li span {
+    color: #8b949e; 
+}
+
+/* Mobile Adjustments (< 850px) */
+@media (max-width: 850px) {
+    .container {
+        /* FIXED: Decreased top padding so image sits closer to the nav bar */
+        padding-top: 80px; 
+    }
+
+    .profile-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 25px; /* Slight reduction in gap between img and box */
+    }
+
+    .profile-img {
+        width: 200px;
+        height: 200px;
+        border-radius: 20px; /* Square with rounded corners */
+        box-shadow: 0 0 25px rgba(176, 38, 255, 0.5); /* Neon glow */
+    }
+
+    .detail-box {
+        width: 100%;
+        padding: 24px;
+        box-sizing: border-box;
+    }
+    
+    .info-list li {
+        justify-content: center;
+    }
+}
+
+/* Container for button outside the box */
+.external-home-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px; /* Space between the box and the button */
+    padding-bottom: 50px;
+}
+
+.main-resume-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 35px;
+    background: rgba(176, 38, 255, 0.05); /* Very subtle purple tint */
+    border: 2px solid var(--secondary-color);
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-family: 'Share Tech Mono', monospace;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border-radius: 50px; /* Rounded pill style for "Global" action feel */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 0 15px rgba(176, 38, 255, 0.1);
+}
+
+.btn-icon {
+    font-size: 1.3rem;
+}
+
+.main-resume-btn:hover {
+    background: var(--secondary-color);
+    color: #0b0c10;
+    box-shadow: 0 0 30px rgba(176, 38, 255, 0.5);
+    transform: translateY(-5px);
+}
+
+/* Ensure mobile alignment stays centered */
+@media (max-width: 850px) {
+    .external-home-actions {
+        margin-top: 30px;
+    }
+    
+    .main-resume-btn {
+        width: 90%;
+        justify-content: center;
+        font-size: 0.95rem;
+    }
+}
+
+/* Profiles Section Styling */
+.profiles-hub {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.section-tag {
+    font-family: 'Share Tech Mono', monospace;
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    font-size: 1.2rem;
+    opacity: 0.8;
+}
+
+.profiles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.profile-card {
+    position: relative;
+    background: #0d1117;
+    border: 1px solid #30363d;
+    padding: 20px;
+    border-radius: 12px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.card-logo {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+    border: white 1px solid;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.card-info h4 {
+    color: #fff;
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.card-info p {
+    color: #8b949e;
+    font-size: 0.85rem;
+    margin: 5px 0 12px 0;
+}
+
+.rank-badge {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+/* Hover Effects */
+.profile-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+}
+
+.profile-card:hover .card-logo {
+    filter: grayscale(0) brightness(1);
+    transform: scale(1.1);
+}
+
+/* Custom Branding Glows */
+.thm:hover { box-shadow: 0 0 20px rgba(255, 0, 0, 0.2); border-color: #ff0000; }
+.github:hover { box-shadow: 0 0 20px rgba(255, 255, 255, 0.1); border-color: #fff; }
+.htb:hover { box-shadow: 0 0 20px rgba(0, 119, 181, 0.2); border-color: #2fd113; }
+
+/* Mobile Alignment */
+@media (max-width: 850px) {
+    .profiles-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Achievement Board Layout */
+.achievement-board {
+    margin-top: 60px;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.achieve-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.achieve-card {
+    background: rgba(13, 17, 23, 0.8);
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    gap: 15px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.achieve-icon {
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+}
+
+.achieve-content {
+    text-align: left;
+}
+
+.achieve-content h4 {
+    color: #fff;
+    margin: 8px 0 5px 0;
+    font-size: 1.1rem;
+}
+
+.achieve-content p {
+    color: #8b949e;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* Status Tags */
+.status-tag {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+/* Complete Styling */
+.status-complete {
+    border-left: 4px solid #4caf50;
+}
+.status-complete .status-tag {
+    background: rgba(76, 175, 80, 0.1);
+    color: #4caf50;
+}
+
+/* Ongoing Styling */
+.status-ongoing {
+    border-left: 4px solid #ffca28;
+}
+.status-ongoing .status-tag {
+    background: rgba(255, 202, 40, 0.1);
+    color: #ffca28;
+}
+
+/* Hover Effect */
+.achieve-card:hover {
+    transform: translateX(10px);
+    background: #161b22;
+    border-color: var(--primary-color);
+}
+
+/* Mobile Fix */
+@media (max-width: 850px) {
+    .achieve-card:hover {
+        transform: translateY(-5px);
+    }
+}
+
+/* Footer Styling */
+.footer {
+    width: 100%;
+    padding: 20px 0;
+    margin-top: 50px;
+    border-top: 1px solid #30363d;
+    background: #0b0c10;
+}
+
+.footer-content {
+    text-align: center;
+    font-family: 'Share Tech Mono', monospace;
+    color: #8b949e;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+.footer-pulse {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    background: #00f0ff;
+    border-radius: 50%;
+    margin-left: 8px;
+    box-shadow: 0 0 8px #00f0ff;
+    animation: footer-blink 2s infinite;
+}
+
+@keyframes footer-blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+/* Page Title */
+.page-title {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    text-align: center;
+}

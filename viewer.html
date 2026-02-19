@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Credential Viewer | Harsh Khandal</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            margin-top: 20px;
+        }
+
+        .viewer-container {
+            flex: 1;
+            width: 95%;
+            max-width: 1000px;
+            margin: 80px auto 40px; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .back-btn {
+            margin-top: 15px;
+            align-self: center;
+            margin-bottom: 15px; 
+            color: var(--primary-color); 
+            text-decoration: none; 
+            font-family: 'Share Tech Mono';
+            font-size: 0.9rem;
+        }
+
+        #display-area {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .cert-display {
+            width: 100%;
+            height: 75vh;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            background: #0d1117;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        /* MOBILE RESPONSIVENESS */
+        @media (max-width: 768px) {
+            .viewer-container {
+                flex: 1;
+                width: 95%;
+                max-width: 1000px;
+                margin: 80px auto 40px;
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                align-items: center; 
+            }
+
+            .back-btn { 
+                display: inline-block;
+                margin-bottom: 20px; 
+                color: var(--primary-color); 
+                text-decoration: none; 
+                font-family: 'Share Tech Mono', monospace;
+                font-size: 0.9rem;
+                padding: 8px 15px;
+                border: 1px solid transparent;
+                transition: all 0.3s ease;
+            }
+
+            .back-btn:hover {
+                color: var(--secondary-color);
+                border: 1px solid var(--secondary-color);
+                border-radius: 5px;
+                background: rgba(176, 38, 255, 0.1);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="header-placeholder"></div>
+    <main class="viewer-container">
+        <div id="display-area"></div>
+        <br>
+        <a href="index.html" class="back-btn" style="color:var(--primary-color);"><< Home</a>
+    </main>
+    
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 Harsh Khandal. All Systems Operational <span class="footer-pulse"></span></p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+
+    <script>
+        // Get the file path from the URL (?file=path/to/file.pdf)
+        const params = new URLSearchParams(window.location.search);
+        const file = params.get('file');
+        const displayArea = document.getElementById('display-area');
+
+        if (file) {
+            if (file.endsWith('.pdf')) {
+                displayArea.innerHTML = `<embed src="${file}" type="application/pdf" class="cert-display">`;
+            } else {
+                displayArea.innerHTML = `<img src="${file}" class="cert-display" style="height:auto;">`;
+            }
+        }
+    </script>
+</body>
+</html>

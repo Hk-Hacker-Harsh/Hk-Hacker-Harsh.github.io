@@ -1,0 +1,131 @@
+/* Timeline Structure */
+.timeline-container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* Vertical Line */
+.timeline-container::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background: #30363d;
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 60px;
+    margin-bottom: 40px;
+}
+
+/* Glowing Dot */
+.timeline-dot {
+    position: absolute;
+    left: 11px;
+    top: 25px;
+    width: 20px;
+    height: 20px;
+    background: #0b0c10;
+    border: 3px solid var(--secondary-color);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--secondary-color);
+    z-index: 2;
+}
+
+/* Card Styling */
+.exp-card {
+    background: #0d1117;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 25px;
+    transition: all 0.3s ease;
+}
+
+.exp-card:hover {
+    border-color: var(--primary-color);
+}
+
+.exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.role-info h3 {
+    margin: 0;
+    color: #fff;
+    font-size: 1.3rem;
+}
+
+.company {
+    color: var(--primary-color);
+    font-size: 0.95rem;
+}
+
+.duration {
+    color: #8b949e;
+    font-size: 0.85rem;
+    font-family: 'Share Tech Mono', monospace;
+}
+
+.short-desc {
+    color: #c5c6c7;
+    margin-bottom: 15px;
+}
+
+/* Expandable Section */
+.expand-btn {
+    background: transparent;
+    border: 1px solid #30363d;
+    color: var(--primary-color);
+    font-family: 'Share Tech Mono', monospace;
+    padding: 5px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    transition: 0.3s;
+}
+
+.expand-btn:hover {
+    background: rgba(0, 240, 255, 0.1);
+    border-color: var(--primary-color);
+}
+
+.extra-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+    padding-top: 0;
+}
+
+.exp-card.active .extra-details {
+    max-height: 500px; /* Large enough to fit text */
+    padding-top: 20px;
+    border-top: 1px solid #30363d;
+    margin-top: 15px;
+}
+
+.extra-details h4 {
+    color: var(--secondary-color);
+    margin: 10px 0 5px 0;
+    font-size: 0.9rem;
+}
+
+.status-success {
+    color: #4caf50;
+    font-weight: bold;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .exp-header { flex-direction: column; gap: 5px; }
+    .timeline-container::before { left: 15px; }
+    .timeline-dot { left: 6px; }
+    .timeline-item { padding-left: 45px; }
+}

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harsh Khandal | Experience</title>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/experience.css">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <main class="container">
+        <h1 class="page-title">/Operational_History</h1>
+
+        <div class="timeline-container">
+            
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="exp-card">
+                    <div class="exp-header">
+                        <div class="role-info">
+                            <h3>Founder & CEO</h3>
+                            <span class="company">PustakMart (Startup Test)</span>
+                        </div>
+                        <span class="duration">May 2025 - Present</span>
+                    </div>
+                    
+                    <p class="short-desc">Engineered a full-scale e-commerce platform using WordPress and WooCommerce to facilitate the buying and selling of used books.</p>
+                    
+                    <button class="expand-btn" onclick="toggleDetails(this)">View_Insights [+]</button>
+                    
+                    <div class="extra-details">
+                        <h4>/Learnings</h4>
+                        <p>Developed and scaled PustakMart, an organic e-commerce platform, where I mastered WordPress development and SEO while navigating the Indian consumer market, startup networking, and government support ecosystems to drive sales with zero marketing spend.</p>
+                        
+                        <h4>/Status</h4>
+                        <p class="status-success">ACTIVE - Scaling platform, Understanding Customers response on Different Actions and refining user experience.</p>
+
+                        <h4>/Link</h4>
+                        <p><a href="https://pustakmart.com/" style="color: white;" target="_blank">Pustakmart.com</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="exp-card">
+                    <div class="exp-header">
+                        <div class="role-info">
+                            <h3>Cyber Security and Python Intern</h3>
+                            <span class="company">ShadowFox</span>
+                        </div>
+                        <span class="duration">Nov 2024 - Dec 2024</span>
+                    </div>
+                    
+                    <p class="short-desc">Intensive internship focused on Python and CyberSecurity</p>
+                    
+                    <button class="expand-btn" onclick="toggleDetails(this)">View_Insights [+]</button>
+                    
+                    <div class="extra-details">
+                        <h4>/Learnings</h4>
+                        <p>Automated security tasks using Python scripts. Gained hands-on experience in vulnerability assessment and penetration Testing.</p>
+                        <h4>/Status</h4>
+                        <p class="status-success">SUCCESS - Completed all deliverables and certificate earned.</p>
+                        <h4>/Certificates</h4>
+                        <p>
+                            <a href="viewer.html?file=assets/experience/ShadowFox-Python.pdf" style="color: white;">Python Development Certificate</a>
+                            <br>
+                            <br>
+                            <a href="viewer.html?file=assets/experience/ShadowFox-Cyber.pdf" style="color: white;">CyberSecurity Certificate</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="exp-card">
+                    <div class="exp-header">
+                        <div class="role-info">
+                            <h3>Cyber Security & Ethical Hacking Intern</h3>
+                            <span class="company">CFSS</span>
+                        </div>
+                        <span class="duration">Aug 2024 - Sep 2024</span>
+                    </div>
+                    
+                    <p class="short-desc">Cyber & Forensics Security Solutions - Penetration Testing.</p>
+                    
+                    <button class="expand-btn" onclick="toggleDetails(this)">View_Insights [+]</button>
+                    
+                    <div class="extra-details">
+                        <h4>/Learnings</h4>
+                        <p>Deep dive into network forensics and web application security testing.</p>
+                        <h4>/Status</h4>
+                        <p class="status-success">SUCCESS - Successfully identified vulnerabilities in test environments.</p>
+                        <h4>/Certificate</h4>
+                        <p><a href="viewer.html?file=assets/experience/CFSS-Cyber.png" style="color: white;">CFSS Certificate</a></p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="js/main.js"></script>
+    <script>
+        function toggleDetails(btn) {
+            const card = btn.parentElement;
+            card.classList.toggle('active');
+            btn.innerText = card.classList.contains('active') ? "Close_Insights [-]" : "View_Insights [+]";
+        }
+    </script>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 Harsh Khandal. All Systems Operational <span class="footer-pulse"></span></p>
+        </div>
+    </footer>
+    
+</body>
+</html>

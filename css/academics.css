@@ -1,0 +1,251 @@
+/* Academic Card */
+.edu-card-link {
+    text-decoration: none;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.edu-card-link:hover .edu-card {
+    background: #11161d;
+    transform: translateY(-5px);
+}
+
+.edu-card-link h2 {
+    color: #ffffff;
+}
+
+.edu-card {
+    transition: all 0.3s ease;
+    cursor: pointer;
+    background: #0d1117;
+    border: 1px solid var(--secondary-color);
+    padding: 30px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    box-shadow: 0 0 15px rgba(176, 38, 255, 0.1);
+}
+
+.edu-info h2 {
+    color: #fff;
+    margin: 0 0 5px 0;
+}
+
+.institution {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.edu-meta {
+    color: #8b949e;
+    margin-top: 10px;
+}
+
+.rank-tag {
+    background: rgba(0, 240, 255, 0.1);
+    color: var(--primary-color);
+    padding: 5px 15px;
+    border-radius: 20px;
+    border: 1px solid var(--primary-color);
+    font-size: 0.8rem;
+    display: inline-block; /* Added to ensure tags sit nicely */
+}
+/* Styling for the status tags */
+.rank-tag.ongoing {
+    background: rgba(76, 175, 80, 0.1); /* Subtle Green */
+    color: #4caf50;
+    border-color: #4caf50;
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.2);
+}
+
+.rank-tag.cgpa {
+    background: rgba(0, 240, 255, 0.1); /* Neon Blue */
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+}
+
+/* Badge Vault */
+.section-subtitle {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-top: 50px;
+    margin-bottom: 25px;
+    border-left: 3px solid var(--secondary-color);
+    padding-left: 15px;
+}
+
+.badge-vault {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+}
+
+.badge-item {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    background: #161b22;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #30363d;
+    transition: 0.3s;
+    overflow: hidden;
+    cursor: pointer; /* Ensures user knows it is clickable */
+}
+
+.badge-item img {
+    width: 80%;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.2));
+}
+
+.badge-item:hover {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 20px rgba(176, 38, 255, 0.3);
+    transform: scale(1.02); /* Subtle lift effect */
+}
+
+/* Certificates Grid */
+.certs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.cert-card {
+    background: #0d1117;
+    border: 1px solid #30363d;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: 0.3s;
+}
+
+.cert-card:hover {
+    border-color: var(--primary-color);
+    background: #11161d;
+}
+
+.cert-icon { font-size: 2rem; }
+
+.cert-details h3 {
+    margin: 0;
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+.issuer {
+    color: #8b949e;
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.view-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-family: 'Share Tech Mono', monospace;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .edu-card { flex-direction: column; text-align: center; gap: 20px; }
+    .badge-vault { justify-content: center; }
+}
+
+
+/* --- Badge Modal Styling --- */
+
+#badge-modal.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+/* The Popup Content Box */
+#badge-modal .modal-content {
+    background-color: #0d1117;
+    padding: 40px 30px;
+    border: 1px solid var(--primary-color);
+    border-radius: 15px;
+    position: relative;
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    width: 85%;
+    max-width: 400px;
+    margin: auto;
+    box-sizing: border-box;
+}
+
+/* Close Button ("X") */
+.close-badge-modal {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #8b949e;
+    line-height: 1;
+}
+
+.close-badge-modal:hover {
+    color: var(--secondary-color);
+}
+
+#badge-modal-verify {
+    width: fit-content;
+    max-width: 100%;
+    padding: 12px 20px;
+    display: inline-block;
+}
+
+#badge-modal-img {
+    width: 120px;
+    height: auto;
+    margin-bottom: 20px;
+    display: block;
+}
+
+#badge-modal-title {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+#badge-modal-desc {
+    width: 100%;
+    word-wrap: break-word;
+    margin-bottom: 20px;
+}
+
+/* MOBILE FIX: Proper side margins */
+@media (max-width: 600px) {
+    #badge-modal .modal-content {
+        width: 85%;
+        padding: 30px 20px;
+    }
+}
