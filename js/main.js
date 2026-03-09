@@ -63,20 +63,29 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
     const bModal = document.getElementById("badge-modal");
     const bCloseBtn = document.querySelector(".close-badge-modal");
+    
+    // Select the modal internal elements once to save performance
+    const modalTitle = document.getElementById("badge-modal-title");
+    const modalDesc = document.getElementById("badge-modal-desc");
+    const modalImg = document.getElementById("badge-modal-img");
+    const modalVerify = document.getElementById("badge-modal-verify");
 
     if (bModal) {
         document.querySelectorAll(".badge-item").forEach(badge => {
             badge.addEventListener("click", function() {
+                // Extract data from the clicked item
                 const title = this.getAttribute("data-title");
                 const desc = this.getAttribute("data-desc");
                 const img = this.getAttribute("data-img");
                 const verifyLink = this.getAttribute("data-verify");
 
-                document.getElementById("badge-modal-title").innerText = title;
-                document.getElementById("badge-modal-desc").innerText = desc;
-                document.getElementById("badge-modal-img").src = img;
-                document.getElementById("badge-modal-verify").href = verifyLink;
+                // Update modal content
+                if(modalTitle) modalTitle.textContent = title;
+                if(modalDesc) modalDesc.textContent = desc;
+                if(modalImg) modalImg.src = img;
+                if(modalVerify) modalVerify.href = verifyLink;
 
+                // Show modal
                 bModal.style.display = "flex";
                 document.body.style.overflow = "hidden";
             });
@@ -88,9 +97,14 @@ document.addEventListener("DOMContentLoaded", () => {
         };
 
         if (bCloseBtn) bCloseBtn.onclick = closeBModal;
-        window.addEventListener("click", (e) => { if (e.target === bModal) closeBModal(); });
+        
+        // Close if clicking the backdrop
+        window.addEventListener("click", (e) => { 
+            if (e.target === bModal) closeBModal(); 
+        });
     }
 });
+
 
 // 4. PROJECT FILTERING
 function applyProjectFilter() {
