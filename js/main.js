@@ -121,3 +121,23 @@ function applyProjectFilter() {
 
 document.addEventListener('DOMContentLoaded', applyProjectFilter);
 window.addEventListener('popstate', applyProjectFilter);
+
+// Certificates Category
+function filterCerts(category, element) {
+    // Toggle active class for tabs
+    document.querySelectorAll('.tab-item').forEach(tab => tab.classList.remove('active'));
+    element.classList.add('active');
+
+    // Filter logic for cert cards
+    const cards = document.querySelectorAll('.cert-card');
+    cards.forEach(card => {
+        const cat = card.getAttribute('data-category');
+        if (category === 'all' || cat === category) {
+            card.style.display = 'flex';
+            card.style.opacity = '1';
+        } else {
+            card.style.display = 'none';
+            card.style.opacity = '0';
+        }
+    });
+}

@@ -249,3 +249,68 @@
         padding: 30px 20px;
     }
 }
+
+/* Certificate Categories */
+
+/* Container for horizontal scroll */
+.terminal-tabs-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-color) transparent;
+    text-align: center;
+}
+
+/* Custom Scrollbar for Chrome/Safari */
+.terminal-tabs-wrapper::-webkit-scrollbar {
+    height: 4px;
+}
+.terminal-tabs-wrapper::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 10px;
+}
+
+.terminal-tabs {
+    display: inline-flex;
+    gap: 12px;
+    margin-top: 5px;
+}
+
+.tab-item {
+    font-family: 'Share Tech Mono', monospace;
+    padding: 10px 18px;
+    background: rgba(0, 240, 255, 0.03);
+    border: 1px solid rgba(0, 240, 255, 0.2);
+    color: #8b949e;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tab-item:hover {
+    background: rgba(0, 240, 255, 0.1);
+    color: #fff;
+    border-color: var(--primary-color);
+}
+
+.tab-item.active {
+    background: linear-gradient(45deg, rgba(0, 240, 255, 0.15), rgba(176, 38, 255, 0.15));
+    border-color: var(--primary-color);
+    color: #fff;
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.3), 
+                inset 0 0 10px rgba(0, 240, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.tab-item.active {
+    opacity: 1;
+    text-shadow: 0 0 5px var(--primary-color);
+}
