@@ -122,6 +122,11 @@
     font-weight: bold;
 }
 
+.status-fail {
+    color: #c61b08;
+    font-weight: bold;
+}
+
 /* Mobile Adjustments */
 @media (max-width: 768px) {
     .exp-header { flex-direction: column; gap: 5px; }

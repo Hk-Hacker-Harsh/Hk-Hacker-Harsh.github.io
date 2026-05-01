@@ -141,3 +141,39 @@ function filterCerts(category, element) {
         }
     });
 }
+
+// Google Contact Form - Send Email
+
+document.getElementById('contact-form')?.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const form = e.target;
+    const status = document.getElementById('form-status');
+    const btn = form.querySelector('button');
+    
+    btn.innerText = "SENDING...";
+    status.style.display = "block";
+    status.innerText = "Processing secure transmission...";
+
+    // Google Script URL
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxX7Rf1dCF27eA2-nb7hmF3Dzbt9DlbWeaa1IDwfj9Lgn_IvLY1xmmnt9qcESPdgcqA/exec';
+
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            btn.innerText = "SEND_MESSAGE";
+            status.innerText = "Message transmitted successfully. All systems operational.";
+            status.style.color = "#4caf50";
+            form.reset();
+        })
+        .catch(error => {
+            btn.innerText = "SEND_MESSAGE";
+            status.innerText = "Transmission failed. Check console for details.";
+            status.style.color = "#ff4c4c";
+            console.error('Error!', error.message);
+        });
+});
+
+// Email Copy
+function copyEmail() {
+    navigator.clipboard.writeText('codingwithme7@gmail.com');
+    alert('Email copied to clipboard!');
+}

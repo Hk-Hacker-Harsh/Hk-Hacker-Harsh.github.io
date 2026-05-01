@@ -47,18 +47,52 @@
             </a>
         </div>
 
-        <div class="location-status">
-            <span class="pulse"></span> Current_Location: Jaipur, Rajasthan, IN (UTC +5:30)
-        </div>
+        <!-- Contact Form -->
+
+        <section class="contact-section" style="max-width: 1000px; margin: 0 auto; padding: 20px;">
+            <h2 class="section-subtitle">/Contact_Me</h2>
+                
+                <form id="contact-form" style="display: flex; flex-direction: column; gap: 20px;">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <!-- Email Field -->
+                        <div class="form-group">
+                            <label style="display: block; color: var(--primary-color); font-family: 'Share Tech Mono', monospace; font-size: 0.8rem; margin-bottom: 8px;">> User Email</label>
+                            <input type="email" name="email" placeholder="Enter Email Address" required 
+                                style="width: 95%; background: #0d1117; border: 1px solid #30363d; padding: 12px; color: #fff; border-radius: 4px; font-family: 'Share Tech Mono', monospace;">
+                        </div>
+
+                        <!-- Subject Field -->
+                        <div class="form-group">
+                            <label style="display: block; color: var(--primary-color); font-family: 'Share Tech Mono', monospace; font-size: 0.8rem; margin-bottom: 8px;">> Message Subject</label>
+                            <input type="text" name="title" placeholder="Enter Message Title" required 
+                                style="width: 100%; background: #0d1117; border: 1px solid #30363d; padding: 12px; color: #fff; border-radius: 4px;">
+                        </div>
+                    </div>
+
+                    <!-- Message Field -->
+                    <div class="form-group">
+                        <label style="display: block; color: var(--primary-color); font-family: 'Share Tech Mono', monospace; font-size: 0.8rem; margin-bottom: 8px;">> Message Body</label>
+                        <textarea name="message" placeholder="Type your message here..." required rows="6"
+                                style="width: 100%; background: #0d1117; border: 1px solid #30363d; padding: 12px; color: #fff; border-radius: 4px; resize: none;"></textarea>
+                    </div>
+
+                    <!-- Action Button -->
+                    <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 10px;">
+                        <button type="submit" id="submit-btn" class="rank-tag ongoing" 
+                                style="cursor: pointer; padding: 8px 35px; font-weight: bold; background: transparent; transition: 0.3s; color: white; border-color: white;">
+                            SEND_MESSAGE
+                        </button>
+                        <p id="form-status" class="edu-meta" style="margin: 0; font-size: 0.85rem; display: none;"></p>
+                    </div>
+                </form>
+        </section>
     </main>
 
     <script src="js/main.js"></script>
-    <script>
-        function copyEmail() {
-            navigator.clipboard.writeText('codingwithme7@gmail.com');
-            alert('Email copied to clipboard!');
-        }
-    </script>
+
+    <div class="location-status">
+            <span class="pulse"></span> Current_Location: Jaipur, Rajasthan, IN (UTC +5:30)
+    </div>
 
     <footer class="footer">
         <div class="footer-content">
