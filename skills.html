@@ -1,109 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harsh Khandal | Skills</title>
-    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/skills.css">
-    <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Harsh Khandal | Skills</title>
+<meta name="description" content="Skills of Harsh Khandal across cyber security, AI automation, programming and web development.">
+<meta name="theme-color" content="#0a0d16">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+<link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+<script>document.documentElement.classList.add('js')</script>
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YJ8CJSGY24"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-YJ8CJSGY24');
-    </script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YJ8CJSGY24"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-YJ8CJSGY24');
+</script>
 </head>
-<body>
-    <div id="header-placeholder"></div>
+<body data-page="skills">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><div class="wrap bar">
+  <a class="brand" href="index.html" aria-label="Harsh Khandal, home"><span class="brand-mark">HK</span><span class="brand-name">Harsh Khandal</span></a>
+  <nav id="nav" class="nav" aria-label="Primary"><a href="index.html">Home</a><a href="projects.html">Projects</a><a href="skills.html" aria-current="page">Skills</a><a href="map.html">Map</a><a href="experience.html">Experience</a><a href="academics.html">Academics</a><a href="contact.html">Contact</a></nav>
+  <button class="palette-btn" id="palette-open" aria-label="Open command menu"><span>Jump to</span><kbd>Ctrl K</kbd></button>
+  <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="nav" aria-label="Menu"><span></span><span></span></button>
+</div></header>
+<main id="main" class="wrap">
 
-    <main class="container">
-        <h1 class="page-title">/Technical_Arsenal</h1>
+<h1 class="page-title" data-scramble>Technical arsenal</h1>
+<p class="page-lead">Pick a category. Every skill links to the projects that prove it.</p>
+<div class="skills-layout">
+  <div class="cat-list" id="cat-list" role="tablist" aria-label="Skill categories"></div>
+  <div class="skill-panel" id="skill-panel" role="tabpanel" aria-live="polite"></div>
+</div>
 
-        <!-- Category Card -->
-        <div class="category-grid">
-            <!-- Cyber -->
-            <div class="category-card" onclick="viewSkillCategory('cyber')">
-                <div class="card-icon">🛡️</div>
-                <h2>Cyber Security & Web Defense</h2>
-                <div class="progress-label"><span>Mastery</span> <span>70%</span></div>
-                <div class="progress-container">
-                    <div class="progress-bar" style="width: 60%;"></div>
-                </div>
-                <span class="btn">Expand_Details</span>
-            </div>
-
-            <!-- AI -->
-            <div class="category-card" onclick="viewSkillCategory('ai')">
-                <div class="card-icon">🤖</div>
-                <h2>Artificial Intelligence & Data Science</h2>
-                <div class="progress-label"><span>Mastery</span> <span>50%</span></div>
-                <div class="progress-container">
-                    <div class="progress-bar" style="width: 50%;"></div>
-                </div>
-                <span class="btn">Expand_Details</span>
-            </div>
-
-            <!-- Programming Languages -->
-            <div class="category-card" onclick="viewSkillCategory('lang')">
-                <div class="card-icon">👨‍💻</div>
-                <h2>Programming Languages</h2>
-                <div class="progress-label"><span>Mastery</span> <span>70%</span></div>
-                <div class="progress-container">
-                    <div class="progress-bar" style="width: 70%;"></div>
-                </div>
-                <span class="btn">Expand_Details</span>
-            </div>
-
-            <!-- Web Development -->
-            <div class="category-card" onclick="viewSkillCategory('web')">
-                <div class="card-icon">🌐</div>
-                <h2>Web Development</h2>
-                <div class="progress-label"><span>Mastery</span> <span>70%</span></div>
-                <div class="progress-container">
-                    <div class="progress-bar" style="width: 70%;"></div>
-                </div>
-                <span class="btn">Expand_Details</span>
-            </div>
-
-            <!-- Startups -->
-            <div class="category-card" onclick="viewSkillCategory('startups')">
-                <div class="card-icon">📈</div>
-                <h2>Startups</h2>
-                <div class="progress-label"><span>Mastery</span> <span>30%</span></div>
-                <div class="progress-container">
-                    <div class="progress-bar" style="width: 30%;"></div>
-                </div>
-                <span class="btn">Expand_Details</span>
-            </div>
-
-            <!-- Other : having approx 1 project and no expectation of new project -->
-            <div class="category-card" onclick="viewSkillCategory('others')">
-                <div class="card-icon">🗂️</div>
-                <h2>Others</h2>
-                <span class="btn">Expand_Details</span>
-            </div>
-
-        </div>
-    </main>
-
-    <footer class="footer">
-        <div class="footer-content">
-            <p>&copy; 2026 Harsh Khandal.<br><br>All Systems Operational <span class="footer-pulse"></span></p>
-        </div>
-    </footer>
-
-    <script src="js/main.js"></script>
-    <script>
-        function viewSkillCategory(cat) {
-            window.location.href = `skill-details.html?type=${cat}`;
-        }
-    </script>
+</main>
+<footer class="footer"><div class="wrap">
+  <p>&copy; 2026 Harsh Khandal.</p>
+  <p>All systems operational <span class="footer-pulse"></span></p>
+</div></footer>
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>

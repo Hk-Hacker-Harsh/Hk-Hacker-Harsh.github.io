@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Exclude internal components
+Disallow: /assets/includes/
+Disallow: /css/
+Disallow: /js/
+
+# Point to your sitemap
+Sitemap: https://harshkhandal.me/sitemap.xml

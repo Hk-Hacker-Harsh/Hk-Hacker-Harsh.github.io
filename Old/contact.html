@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harsh Khandal | Contact</title>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YJ8CJSGY24"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-YJ8CJSGY24');
+    </script>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <main class="container">
+        <h1 class="page-title">/Establish_Connection</h1>
+        <p class="subtitle">Select a secure node to initiate transmission.</p>
+
+        <div class="contact-grid">
+            <div class="contact-card email-card">
+                <div class="card-icon"><img src="assets/images/Mail_Icon.png" alt="" class="contact-icon"></div>
+                <h3>Primary_Mail</h3>
+                <p>codingwithme7@gmail.com</p>
+                <button class="action-btn" onclick="copyEmail()">Copy_Address_</button>
+            </div>
+
+            <a href="https://linkedin.com/in/harsh-khandal-4941522b1/" target="_blank" class="contact-card">
+                <div class="card-icon"><img src="assets/images/LinkedIn_Icon.png" alt="LinkedIn" class="contact-icon"></div>
+                <h3>LinkedIn</h3>
+                <p>Professional Network</p>
+                <span class="action-btn">View_Profile_</span>
+            </a>
+
+            <a href="https://x.com/Hk__Hacker" target="_blank" class="contact-card">
+                <div class="card-icon"><img src="assets/images/X_Icon.png" alt="LinkedIn" class="contact-icon"></div>
+                <h3>X_Global</h3>
+                <p>Cybersecurity Updates</p>
+                <span class="action-btn">Follow_Node_</span>
+            </a>
+
+            <a href="https://linktr.ee/Hk.Hacker" target="_blank" class="contact-card">
+                <div class="card-icon"><img src="assets/images/Linktree_Icon.jpg" alt="LinkedIn" class="contact-icon"></div>
+                <h3>Linktree</h3>
+                <p>All Digital Links</p>
+                <span class="action-btn">Access_All_</span>
+            </a>
+        </div>
+
+        <!-- Contact Form -->
+
+        <section class="contact-section" style="max-width: 1000px; margin: 0 auto; padding: 20px;">
+            <h2 class="section-subtitle">/Contact_Me</h2>
+                
+                <form id="contact-form" style="display: flex; flex-direction: column; gap: 20px;" method="POST">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <!-- Email Field -->
+                        <div class="form-group">
+                            <label style="display: block; color: var(--primary-color); font-family: 'Share Tech Mono', monospace; font-size: 0.8rem; margin-bottom: 8px;">> User Email</label>
+                            <input type="email" name="email" placeholder="Enter Email Address" required 
+                                style="width: 95%; background: #0d1117; border: 1px solid #30363d; padding: 12px; color: #fff; border-radius: 4px; font-family: 'Share Tech Mono', monospace;">
+                        </div>
+
+                        <!-- Subject Field -->
+                        <div class="form-group">
+                            <label style="display: block; color: var(--primary-color); font-family: 'Share Tech Mono', monospace; font-size: 0.8rem; margin-bottom: 8px;">> Message Subject</label>
+                            <input type="text" name="title" placeholder="Enter Message Title" required 
+                                style="width: 100%; background: #0d1117; border: 1px solid #30363d; padding: 12px; color: #fff; border-radius: 4px;">
+                        </div>
+                    </div>
+
+                    <!-- Message Field -->
+                    <div class="form-group">
+                        <label style="display: block; color: var(--primary-color); font-family: 'Share Tech Mono', monospace; font-size: 0.8rem; margin-bottom: 8px;">> Message Body</label>
+                        <textarea name="message" placeholder="Type your message here..." required rows="6"
+                                style="width: 100%; background: #0d1117; border: 1px solid #30363d; padding: 12px; color: #fff; border-radius: 4px; resize: none;"></textarea>
+                    </div>
+
+                    <!-- Action Button -->
+                    <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 10px;">
+                        <button type="submit" id="submit-btn" class="rank-tag ongoing" 
+                                style="cursor: pointer; padding: 8px 35px; font-weight: bold; background: transparent; transition: 0.3s; color: white; border-color: white;">
+                            SEND_MESSAGE
+                        </button>
+                        <p id="form-status" class="edu-meta" style="margin: 0; font-size: 0.85rem; display: none;"></p>
+                    </div>
+                </form>
+        </section>
+    </main>
+
+    <script src="js/main.js"></script>
+
+    <div class="location-status">
+            <span class="pulse"></span> Current_Location: Jaipur, Rajasthan, IN (UTC +5:30)
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 Harsh Khandal.<br><br>All Systems Operational <span class="footer-pulse"></span></p>
+        </div>
+    </footer>
+    
+</body>
+</html>

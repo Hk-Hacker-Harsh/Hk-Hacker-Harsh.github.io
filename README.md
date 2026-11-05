@@ -1,96 +1,29 @@
-# ⚡ Welcome to the Fire Portfolio
+# Harsh Khandal - Portfolio
 
-Hey there! I'm **Harsh**, and this is the source code for my personal corner of the internet. It’s built to be fast, dark-mode friendly, and a little bit "cyber." No bulky frameworks here—just clean code and a lot of caffeine.
+Static site: plain HTML, CSS and vanilla JS. No backend, no build step. Works on GitHub Pages.
 
+## Deploy
+1. Copy everything in this folder into the root of your `Hk-Hacker-Harsh.github.io` repo (keep your existing `assets/` folder).
+2. Delete the old `css/` and `js/` files and `assets/includes/header.html` (no longer used).
+3. Commit and push. `CNAME` keeps `harshkhandal.dev`.
 
+## Edit content
+Everything lives in `js/data.js`: projects, skills, experience, certificates, badges, education.
+Add one object to a list and the page updates.
 
-## 🛠️ What’s Under the Hood?
+## Files
+- `css/site.css` - the whole design
+- `js/data.js` - all content
+- `js/main.js` - header effects, command menu (Ctrl K or /), renderers for each page
+- `js/graph.js` - the small interactive graph on the home page
+- `js/map.js` - the detailed map page (`map.html`), generated from `js/data.js`
 
-I’m a big fan of doing things efficiently. Here’s the cool stuff this site does:
+## Extras
+- Command menu: press `Ctrl K` (or `/`) anywhere
+- Easter egg: the Konami code
+- Contact form opens the visitor's mail app (no server needed)
 
-* **Modular Magic:** I got tired of updating the menu on 10 different pages, so I wrote a script to "inject" header everywhere. One edit, site-wide change. Boom.
-* **Project Sorting:** Looking for something specific? The projects page has a custom filter. Whether it's Python or Cyber, you can find it without digging through the archives.
-* **The Vault:** A dedicated viewer for all my certs and files. It handles PDFs and images like a champ, making sure everything looks crisp.
-
----
-
-## 🚀 The Tech Stack
-
-* **Frontend:** Pure HTML, CSS, and Vanilla JS. It’s old school, but it’s fast as lightning.
-* **Automation:** I use **n8n** to build bots that actually do things (check out the Zippy or Reflect AI folders!).
-* **Security:** Documentation of my CTF exploits on TryHackMe and HackTheBox.
-
-
-
----
-
-## 📂 Quick Tour
-
-```text
-.
-|   academics.html
-|   contact.html
-|   experience.html
-|   index.html
-|   projects.html
-|   README.md
-|   skill-details.html
-|   skills.html
-|   viewer.html
-|
-+---assets
-|   +---badges
-|   |       google-cyber.png
-|   |
-|   +---certificates
-|   |       CyberCTF-Event_Head.pdf
-|   |       Google_Cyber.pdf
-|   |       JagrukFest-Volunteer-2025.pdf
-|   |       TryHackMe-AOC23.png
-|   |       TryHackMe-AOC25.pdf
-|   |       TryHackMe-Beginner.png
-|   |       TryHackMe-PreSec.png
-|   |       TuteDude-EH.pdf
-|   |       TuteDude-Web.pdf
-|   |       WsCube_EH.pdf
-|   |
-|   +---experience
-|   |       CFSS-Cyber.png
-|   |       ShadowFox-Cyber.pdf
-|   |       ShadowFox-Python.pdf
-|   |
-|   +---images
-|   |   |   favicon.ico
-|   |   |   Github_Icon.png
-|   |   |   HTB_Icon.png
-|   |   |   LinkedIn_Icon.png
-|   |   |   Linktree_Icon.jpg
-|   |   |   Mail_Icon.png
-|   |   |   profile.png
-|   |   |   Thm_Icon.jpg
-|   |   |   X_Icon.png
-|   |   |
-|   |   \---projects
-|   |           Converter_v1.png
-|   |           CTF_Walkthroughs.png
-|   |           Payload_Generator.png
-|   |           Portfolio.png
-|   |           Pustakmart.png
-|   |
-|   \---includes
-|           header.html
-|
-+---css
-|       academics.css
-|       contact.css
-|       experience.css
-|       header.css
-|       projects.css
-|       skills.css
-|       style.css
-|
-+---js
-       main.js
-```
-
-## ☺️ Thank You ☺️
+## Add real photos
+1. Put images in `assets/moments/` (about 1600px wide, JPG).
+2. Add an entry to `gallery` in `js/data.js`. The "Moments" section on the home page appears automatically.
+3. To show a photo inside an experience card, add `photo: 'assets/moments/file.jpg'` (and optional `photoCaption`) to that entry in `experience`.

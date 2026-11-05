@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Harsh Khandal | Full map</title>
+<meta name="description" content="Interactive map of how Harsh Khandal's projects, skills, experience and certificates connect.">
+<meta name="theme-color" content="#0a0d16">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+<link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+<script>document.documentElement.classList.add('js')</script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YJ8CJSGY24"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-YJ8CJSGY24');
+</script>
+</head>
+<body data-page="map">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><div class="wrap bar">
+  <a class="brand" href="index.html" aria-label="Harsh Khandal, home"><span class="brand-mark">HK</span><span class="brand-name">Harsh Khandal</span></a>
+  <nav id="nav" class="nav" aria-label="Primary"><a href="index.html">Home</a><a href="projects.html">Projects</a><a href="skills.html">Skills</a><a href="map.html" aria-current="page">Map</a><a href="experience.html">Experience</a><a href="academics.html">Academics</a><a href="contact.html">Contact</a></nav>
+  <button class="palette-btn" id="palette-open" aria-label="Open command menu"><span>Jump to</span><kbd>Ctrl K</kbd></button>
+  <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="nav" aria-label="Menu"><span></span><span></span></button>
+</div></header>
+<main id="main" class="wrap">
+
+<h1 class="page-title" data-scramble>The full map</h1>
+<p class="page-lead">Everything I have built, studied and earned, and how it connects. Click a node to see why it is linked, drag to rearrange, scroll to zoom.</p>
+<div class="map-tools">
+  <label class="search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+  <input id="search" list="node-list" placeholder="Find a project, skill or certificate" aria-label="Find a node" autocomplete="off"></label>
+  <datalist id="node-list"></datalist>
+  <div class="chips" id="legend" role="group" aria-label="Show or hide node types"></div>
+</div>
+<div class="map-wrap">
+  <canvas id="map" aria-label="Interactive graph of projects, skills, experience and certificates. A list version is available below the graph for keyboard users."></canvas>
+  <div class="map-ctrl" role="group" aria-label="Map controls">
+    <button class="btn btn-sm" id="zoom-in" aria-label="Zoom in">+</button>
+    <button class="btn btn-sm" id="zoom-out" aria-label="Zoom out">&minus;</button>
+    <button class="btn btn-sm" id="fit">Fit</button>
+    <button class="btn btn-sm" id="relayout">Re-layout</button>
+  </div>
+  <p class="map-count" id="map-count"></p>
+  <aside class="map-panel" id="map-panel" aria-live="polite">
+    <button class="modal-close" id="map-close" aria-label="Close details">&times;</button>
+    <div id="map-panel-body"></div>
+  </aside>
+</div>
+<details class="sr-list"><summary>List view of every node</summary><ul id="sr-nodes"></ul></details>
+
+</main>
+<footer class="footer"><div class="wrap">
+  <p>&copy; 2026 Harsh Khandal.</p>
+  <p>All systems operational <span class="footer-pulse"></span></p>
+</div></footer>
+<script src="js/data.js"></script>
+<script src="js/map.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
