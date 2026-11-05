@@ -139,7 +139,7 @@ Create the folder `assets/moments/` and keep photos around 1600px wide, JPG, und
 ## 8. Email
 
 ```js
-email: 'codingwithme7@gmail.com',
+email: 'hk.harsh.khandal@gmail.com',
 ```
 
 Used by the Copy address button, the contact form and the `Ctrl K` menu.

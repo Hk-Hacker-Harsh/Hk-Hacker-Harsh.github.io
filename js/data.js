@@ -3,7 +3,7 @@
    To add a project, certificate or job: add one object to the right list.
    ------------------------------------------------------------------ */
 window.PORTFOLIO = {
-  email: 'codingwithme7@gmail.com',
+  email: 'hk.harsh.khandal@gmail.com',
 
   /* ---------- Moments: real photos (certificate handovers, wins, events) ----------
      Put image files in assets/moments/ and add one entry per photo. Empty list = section stays hidden.
@@ -199,7 +199,7 @@ window.PORTFOLIO = {
       id: 'payload-generator',
       title: 'Bash Script : Payload Generator',
       short: 'My first project.',
-      full: 'This is my first project, so there can be some issues. If you find any issue or error, please report it to codingwithme7@gmail.com or try installing the packages used in the script.',
+      full: 'This is my first project, so there can be some issues. If you find any issue or error, please report it to hk.harsh.khandal@gmail.com or try installing the packages used in the script.',
       tags: ['bash', 'cyber'],
       img: 'assets/images/projects/Payload_Generator.png',
       links: [{ label: 'View GitHub', url: 'https://github.com/Hk-Hacker-Harsh/Payload_Generator' }]
@@ -378,7 +378,7 @@ window.PORTFOLIO = {
     {
       title: 'BS in Data Science & Applications', where: 'IIT Madras',
       meta: 'Current enrollment · Focus: Data Analytics & Security',
-      chips: [{ t: 'Active', k: 'ongoing' }, { t: 'CGPA 7.91 / 10', k: 'score' }],
+      chips: [{ t: 'Active', k: 'ongoing' }, { t: 'CGPA 7.60 / 10', k: 'score' }],
       url: 'https://app.onlinedegree.iitm.ac.in/student/25F2000906'
     },
     {
