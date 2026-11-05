@@ -438,15 +438,30 @@
   function contact() {
     $('#copy-email').addEventListener('click', copyEmail);
     const form = $('#contact-form'), status = $('#form-status');
-    form.addEventListener('submit', e => {
+    const btn = $('button[type="submit"]', form);
+    const btnLabel = btn.textContent;
+    // Google Apps Script web app URL (same one as the old site)
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxX7Rf1dCF27eA2-nb7hmF3Dzbt9DlbWeaa1IDwfj9Lgn_IvLY1xmmnt9qcESPdgcqA/exec';
+
+    form.addEventListener('submit', async e => {
       e.preventDefault();
-      const f = new FormData(form);
-      const subject = (f.get('title') || '').toString().trim();
-      const body = `${f.get('message')}\n\n-- \nReply to: ${f.get('email')}`;
-      // No backend: this opens the visitor's mail app with the message filled in.
-      location.href = `mailto:${D.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      status.className = 'form-status ok';
-      status.textContent = 'Your mail app should open with the message ready. If nothing opens, copy my email above.';
+      btn.disabled = true; btn.textContent = 'Sending...';
+      status.className = 'form-status';
+      status.textContent = 'Sending your message...';
+      try {
+        const res = await fetch(scriptURL, { method: 'POST', body: new FormData(form) });
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        status.className = 'form-status ok';
+        status.textContent = 'Message sent. Thank you, I will get back to you soon.';
+        form.reset();
+      } catch (err) {
+        console.error('Contact form error:', err);
+        status.className = 'form-status';
+        status.textContent = 'Could not send the message. Please try again or use the email above.';
+        toast('Message failed to send');
+      } finally {
+        btn.disabled = false; btn.textContent = btnLabel;
+      }
     });
     bindCards(); initScramble();
   }
