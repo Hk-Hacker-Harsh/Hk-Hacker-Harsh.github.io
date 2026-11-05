@@ -441,7 +441,7 @@
     const btn = $('button[type="submit"]', form);
     const btnLabel = btn.textContent;
     // Google Apps Script web app URL (same one as the old site)
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbxX7Rf1dCF27eA2-nb7hmF3Dzbt9DlbWeaa1IDwfj9Lgn_IvLY1xmmnt9qcESPdgcqA/exec';
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzEqWRl1BXQe8m5qNfRHjE0KrZwH0cNS-WHuK5U0BUqf3_7zIjxIEBo5kvIdwmdz5kp/exec';
 
     form.addEventListener('submit', async e => {
       e.preventDefault();
@@ -450,7 +450,8 @@
       status.textContent = 'Sending your message...';
       try {
         const res = await fetch(scriptURL, { method: 'POST', body: new FormData(form) });
-        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const data = await res.json();
+        if (data.result !== 'success') throw new Error(data.error || 'Send failed');
         status.className = 'form-status ok';
         status.textContent = 'Message sent. Thank you, I will get back to you soon.';
         form.reset();
